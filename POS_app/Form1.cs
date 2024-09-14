@@ -68,7 +68,7 @@ namespace POS_app
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(200, 450); // Full height of the form
+            this.panelSideMenu.Size = new System.Drawing.Size(300, 450); // Full height of the form
             this.panelSideMenu.TabIndex = 1;
             // 
             // treeViewMenu
@@ -130,11 +130,61 @@ namespace POS_app
                 new TreeNode("Return")
             });
             servicesNode.Nodes.Add("Orders");
+            servicesNode.Nodes.Add("Products").Nodes.AddRange(new TreeNode[]
+            {
+                new TreeNode("Categories"),
+                new TreeNode("Units"),
+                new TreeNode("Products"),
+                new TreeNode("Barcode")
+            });
+            servicesNode.Nodes.Add("Stock");
+            servicesNode.Nodes.Add("Services");
+            servicesNode.Nodes.Add("Customers");
+            servicesNode.Nodes.Add("Transactions");
+            servicesNode.Nodes.Add("Delivery");
+            servicesNode.Nodes.Add("Expenses").Nodes.AddRange(new TreeNode[]
+            {
+                new TreeNode("Expenses"),
+                new TreeNode("Expenses Type")
+            });
+            servicesNode.Nodes.Add("Reports").Nodes.AddRange(new TreeNode[]
+            {
+                new TreeNode("Sales Summary"),
+                new TreeNode("Purchases Report"),
+                new TreeNode("Stock Report"),
+                new TreeNode("Expenses"),
+                new TreeNode("Income"),
+                new TreeNode("Profit"),
+                new TreeNode("Loss"),
+                new TreeNode("Users"),
+                new TreeNode("Best Customers"),
+                new TreeNode("Suppliers"),
+                new TreeNode("Top Selling Products"),
+                new TreeNode("Payment Report"),
+            });
+            TreeNode settingsNode = new TreeNode("Controls");
+            settingsNode.Nodes.Add("Team members");
+            settingsNode.Nodes.Add("Buisness");
+            settingsNode.Nodes.Add("Settings").Nodes.AddRange(new TreeNode[]
+            {
+                new TreeNode("General"),
+                new TreeNode("Email"),
+                new TreeNode("Language"),
+                new TreeNode("Backup"),
+                new TreeNode("About Us"),
+                new TreeNode("Privacy Policy"),
+                new TreeNode("Terms & Conditions"),
+                new TreeNode("Refund Policy"),
+                new TreeNode("Tax"),
+                new TreeNode("System Updater")
+            });
+
 
             treeViewMenu.Nodes.AddRange(new TreeNode[]
             {
                 adminNode,
-                servicesNode
+                servicesNode,
+                settingsNode
             });
 
             // Expand all nodes by default
